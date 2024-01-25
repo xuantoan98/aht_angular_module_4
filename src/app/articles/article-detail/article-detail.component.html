@@ -1,0 +1,7 @@
+<ng-container *ngIf="article$ | async as article; else noArticle">
+  <h1>{{ article.title }}</h1>
+  <br />
+  <p>{{ article.body }}</p>
+</ng-container>
+
+<ng-template #noArticle> No Article found </ng-template>
