@@ -1,13 +1,13 @@
-import { Routes } from "@angular/router";
-import { ArticleListComponent } from "./article-list/article-list.component";
-import { ArticleDetailComponent } from "./article-detail/article-detail.component";
+import { Routes } from '@angular/router';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { articlesGuard } from '../guards/articles.guard';
 
 export const articlesRoutes: Routes = [
-    {
-        path: 'articles',
-        children: [
-            { path: '', component: ArticleListComponent },
-            { path: ':slug', component: ArticleDetailComponent }
-        ]
-    }
+  {
+    path: '',
+    component: ArticleListComponent,
+    canActivate: [articlesGuard],
+  },
+  { path: ':slug', component: ArticleDetailComponent },
 ];

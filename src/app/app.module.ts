@@ -8,6 +8,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 import { ArticlesModule } from './articles/articles.module';
+import { PermissionsService } from './guards/articles.guard';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { ArticlesModule } from './articles/articles.module';
   ],
   imports: [
     BrowserModule,
-    ArticlesModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    PermissionsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
