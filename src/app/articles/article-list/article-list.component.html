@@ -3,6 +3,7 @@
         {{ article.title }}
         <br>
         <a [routerLink]="['/articles', article.slug]">Read more</a>
+        <a [routerLink]="['/articles/edit', article.slug]">Edit</a>
     </li>
 </ul>
 <router-outlet></router-outlet>

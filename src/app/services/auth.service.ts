@@ -10,6 +10,6 @@ export class AuthService {
   constructor() { }
 
   get currentUser() {
-    return of( { username: 'ToanKX'} )
+    return of( { username: 'ToanKX', articles: ['title-1'] } )
   }
 }
