@@ -1,0 +1,28 @@
+<ng-container *ngIf="book$ | async as book; else noBook">
+  <div class="container-fluid bg-secondary mb-5">
+    <div
+      class="d-flex flex-column align-items-center justify-content-center"
+      style="min-height: 300px"
+    >
+      <h1 class="font-weight-semi-bold text-uppercase mb-3">{{ pageTitle$ }}</h1>
+    </div>
+  </div>
+
+  <div class="container-fuild mb-5">
+    <div class="row">
+      <div class="col col-md-7">
+        <img src="{{ book.image }}" class="card-img-top" alt="">
+      </div>
+  
+      <div class="col col-md-5">
+        <h2>{{ book.name }}</h2>
+        <h5>Price: {{ book.price | currency }}</h5>
+        <h5>Sale Price: {{ book.salePrice | currency }}</h5>
+        <p>Author: {{ book.author }}</p>
+        <p>{{ book.content }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #noBook> No Book found </ng-template>

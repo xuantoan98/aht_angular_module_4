@@ -16,7 +16,7 @@ export const articlesRoutes: Routes = [
     canActivateChild: [canActivateChildArticle],
     children: [
       { path: '', component: ArticleDetailComponent },
-      { path: '/edit', component: ArticleDetailEditComponent }
+      { path: 'edit', component: ArticleDetailEditComponent }
     ]
   },
 ];

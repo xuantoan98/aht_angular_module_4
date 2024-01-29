@@ -27,6 +27,7 @@ export class ArticleDetailEditComponent implements OnInit {
       filter(article => !!article),
       switchMap(article => of(this.initForm(article)))
     );
+
   }
 
   private initForm(article: IArticle): FormGroup {
@@ -37,7 +38,4 @@ export class ArticleDetailEditComponent implements OnInit {
     this.initialFormValue = form.getRawValue();
     return form;
   }
-
-
-
 }

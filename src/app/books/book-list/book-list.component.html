@@ -1,0 +1,48 @@
+<div class="container-fluid bg-secondary mb-5">
+  <div
+    class="d-flex flex-column align-items-center justify-content-center"
+    style="min-height: 300px"
+  >
+    <h1 class="font-weight-semi-bold text-uppercase mb-3" *ngIf="pageTitle$">{{ pageTitle$ }}</h1>
+  </div>
+</div>
+
+<div class="container-fluid pt-5">
+  <div class="row px-xl-5">
+    <!-- Shop Product Start -->
+    <div class="col-md-12">
+      <div class="row pb-3">
+        <div class="col-lg-4 col-md-6 col-sm-12 pb-1" *ngIf="notFound">
+          <p class="font-weight-medium">No suitable books found!</p>
+        </div>
+
+        <ng-container>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div 
+              class="col"
+              *ngFor="let book of books$ | async"
+            >
+              <div class="card">
+                <img src="{{ book.image }}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.name }}</h5>
+                  <p class="card-text">Author: {{ book.author }}</p>
+                  <div class="d-flex justify-content-center">
+                    <h6>
+                      {{ book.salePrice }}
+                    </h6>
+                    <h6 class="text-muted ml-2">
+                      <del>{{ book.price }}</del>
+                    </h6>
+                  </div>
+                  <a [routerLink]="['/books', book.id]" class="btn btn-primary">View Detail</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <!-- Shop Product End -->
+  </div>
+</div>
