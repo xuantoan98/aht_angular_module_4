@@ -264,7 +264,7 @@
   "users": [
     {
       "id": 1,
-      "name": "Kiều Xuân Toản",
+      "fullName": "Kiều Xuân Toản",
       "username": "ToanKX",
       "email": "toankxt@gmail.com",
       "role": 1

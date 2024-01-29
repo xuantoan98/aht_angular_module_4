@@ -13,6 +13,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { BooksComponent } from './books/books.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookListComponent } from './books/book-list/book-list.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BookListComponent } from './books/book-list/book-list.component';
     FooterComponent,
     BooksComponent,
     BookListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
