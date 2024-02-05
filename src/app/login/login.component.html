@@ -1,7 +1,8 @@
 <ng-container>
   <div class="container py-5">
     <h2 class="h2 mb-5">Login Page</h2>
-    <form>
+    <form (ngSubmit)="onLogin()">
+      <div *ngIf="errorMessages['general']" class="error-message bg-danger text-light p-2 mb-3 small">{{ errorMessages['general'] }}</div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input
@@ -9,18 +10,26 @@
           class="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
+          name="email"
+          [(ngModel)]="email" (keyup)="onKeyUp($event)"
+          [ngModelOptions]="{standalone:true}"
         />
-        <div id="emailHelp" class="form-text">
-          We'll never share your email with anyone else.
-        </div>
+        <div *ngIf="errorMessages['email']" class="small text-danger mt-1 font-italic">{{ errorMessages['email'] }}</div>
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" />
+        <label for="exampleInputPassword" class="form-label">Password</label>
+        <input 
+          type="password"
+          class="form-control"
+          id="exampleInputPassword"
+          [(ngModel)]="password"
+          [ngModelOptions]="{standalone:true}"
+          />
+        <div *ngIf="errorMessages['password']" class="small text-danger mt-1 font-italic">{{ errorMessages['password'] }}</div>
       </div>
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <input type="checkbox" class="form-check-input cursor-pointer" id="remember" name="remember" />
+        <label class="form-check-label" for="remember">Remember Password</label>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form> 

@@ -14,6 +14,7 @@ import { BooksComponent } from './books/books.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [
